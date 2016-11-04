@@ -3,7 +3,7 @@
 
 TL;DR: a check to send bandwidth usage and the count of active connections to DataDog.
 
-I run an OpenVPN service on my VPS. Its sole purpose is to securely tunnel traffic anytime I need to connect to unencrypted WiFi (something I found deployed to nearly every single hotel I visited last year). Because of this purpose, I have the expectation that there will almost never be any connected users, and when there is, there will never be more than one.
+I run an OpenVPN service on my VPS. Its sole purpose is to securely tunnel traffic anytime I need to connect to unencrypted WiFi (something I found deployed to nearly every single hotel I visited last year). Because of this purpose, I have the expectation that there will almost never be any connected users, and when there are, there will never be more than one.
 
 Luckily, OpenVPN provides a handy management interface that can be interrogated for such information. This DataDog check does just that by attempting to connect to the management interface, running `load-stats` and then closing the connection again. The output of `load-stats` is formatted as such:
 
