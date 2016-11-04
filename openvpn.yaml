@@ -1,0 +1,15 @@
+init_config:
+  default_timeout: 8
+
+instances:
+  # Domain name or IP address of OpenVPN server
+  # i.e localhost, foo.example.com, 127.0.0.1
+  - domain: localhost
+
+    # OpenVPN management interface port
+    port: 7505
+
+    # DataDog tags
+    tags:
+      - env:example
+      - foobar
